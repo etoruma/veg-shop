@@ -102,7 +102,7 @@ textarea{resize:none;min-height:76px}
 <script>
 (function(){
 const tg = window.Telegram && window.Telegram.WebApp;
-const inTG = !!(tg && tg.initData);
+const inTG = !!(tg && tg.platform && tg.platform !== 'unknown');
 if(!inTG) document.body.classList.add('web');
 if(tg){
   try{ tg.ready(); tg.expand(); }catch(e){}
